@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUST FOR ONE BB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部标题 -->
+        <header class="header">
+            <h1>游梦</h1>
+        </header>
+        
+        <div class="main-content">
+            <!-- 主播放器 -->
+            <div class="player">
+                <!-- 唱片封面 -->
+                <div class="record-container">
+                    <div class="record-cover">
+                        <img id="cover-image" src="https://picsum.photos/400/400?random=1" alt="专辑封面">
+                        <div class="record-center"></div>
+                    </div>
+                </div>
+
+                <!-- 歌曲信息 -->
+                <div class="song-info">
+                    <h2 id="song-title">等待播放...</h2>
+                    <p id="song-album" class="song-album">--</p>
+                    <div class="equalizer">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <!-- 歌词显示区 -->
+                <div class="lyrics-container">
+                    <div id="lyrics" class="lyrics">
+                        <p>歌词将在这里显示</p>
+                        <p>请选择一首带有歌词的歌曲</p>
+                    </div>
+                </div>
+
+                <!-- 进度控制 -->
+                <div class="progress-control">
+                    <span id="current-time">00:00</span>
+                    <div id="progress-bar" class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                    <span id="total-time">00:00</span>
+                </div>
+
+                <!-- 播放控制 -->
+                <div class="player-controls">
+                    <button id="shuffle-btn" class="control-btn">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button id="prev-btn" class="control-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="play-btn" class="play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="next-btn" class="control-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button id="repeat-btn" class="control-btn">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <!-- 音量控制 -->
+                <div class="volume-control">
+                    <i id="volume-icon" class="fas fa-volume-up"></i>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.7">
+                </div>
+            </div>
+
+            <!-- 播放列表 -->
+            <div class="playlist-container">
+                <h3 class="playlist-title">
+                    <i class="fas fa-list"></i>
+                    <span id="current-album-title">歌曲列表</span>
+                </h3>
+                <ul id="playlist" class="playlist">
+                    <!-- 播放列表将通过JS动态生成 -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- 专辑展示区（底部） -->
+        <div class="albums-section">
+            <div id="albums-container" class="albums-container">
+                <!-- 专辑将通过JS动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 音频元素 -->
+    <audio id="audio-player" preload="metadata"></audio>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
